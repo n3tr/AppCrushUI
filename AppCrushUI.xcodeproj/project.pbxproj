@@ -13,6 +13,9 @@
 		6A42D42E158CA41800663A7C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 6A42D42C158CA41800663A7C /* Credits.rtf */; };
 		6A42D431158CA41800663A7C /* AppCrushUIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A42D430158CA41800663A7C /* AppCrushUIAppDelegate.m */; };
 		6A42D434158CA41800663A7C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A42D432158CA41800663A7C /* MainMenu.xib */; };
+		6A42D44A158CC6EC00663A7C /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A42D449158CC6EC00663A7C /* DragDropImageView.m */; };
+		6A42D44C158CC73100663A7C /* DropImageHere.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A42D44B158CC73100663A7C /* DropImageHere.tiff */; };
+		6A42D44E158CD73B00663A7C /* pngcrush in Resources */ = {isa = PBXBuildFile; fileRef = 6A42D44D158CD73B00663A7C /* pngcrush */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +24,18 @@
 		6A42D420158CA41800663A7C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		6A42D421158CA41800663A7C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6A42D422158CA41800663A7C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6A42D425158CA41800663A7C /* AppCrushUI-Info.plist */ = {isa = PBXFileReference; path = "AppCrushUI-Info.plist"; sourceTree = "<group>"; };
+		6A42D425158CA41800663A7C /* AppCrushUI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCrushUI-Info.plist"; sourceTree = "<group>"; };
 		6A42D427158CA41800663A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6A42D429158CA41800663A7C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6A42D42B158CA41800663A7C /* AppCrushUI-Prefix.pch */ = {isa = PBXFileReference; path = "AppCrushUI-Prefix.pch"; sourceTree = "<group>"; };
+		6A42D42B158CA41800663A7C /* AppCrushUI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppCrushUI-Prefix.pch"; sourceTree = "<group>"; };
 		6A42D42D158CA41800663A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		6A42D42F158CA41800663A7C /* AppCrushUIAppDelegate.h */ = {isa = PBXFileReference; path = AppCrushUIAppDelegate.h; sourceTree = "<group>"; };
+		6A42D42F158CA41800663A7C /* AppCrushUIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCrushUIAppDelegate.h; sourceTree = "<group>"; };
 		6A42D430158CA41800663A7C /* AppCrushUIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCrushUIAppDelegate.m; sourceTree = "<group>"; };
 		6A42D433158CA41800663A7C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		6A42D448158CC6EC00663A7C /* DragDropImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragDropImageView.h; sourceTree = "<group>"; };
+		6A42D449158CC6EC00663A7C /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropImageView.m; sourceTree = "<group>"; };
+		6A42D44B158CC73100663A7C /* DropImageHere.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DropImageHere.tiff; sourceTree = "<group>"; };
+		6A42D44D158CD73B00663A7C /* pngcrush */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pngcrush; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +89,7 @@
 		6A42D423158CA41800663A7C /* AppCrushUI */ = {
 			isa = PBXGroup;
 			children = (
+				6A42D442158CC68300663A7C /* View */,
 				6A42D42F158CA41800663A7C /* AppCrushUIAppDelegate.h */,
 				6A42D430158CA41800663A7C /* AppCrushUIAppDelegate.m */,
 				6A42D432158CA41800663A7C /* MainMenu.xib */,
@@ -93,6 +101,8 @@
 		6A42D424158CA41800663A7C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6A42D44D158CD73B00663A7C /* pngcrush */,
+				6A42D44B158CC73100663A7C /* DropImageHere.tiff */,
 				6A42D425158CA41800663A7C /* AppCrushUI-Info.plist */,
 				6A42D426158CA41800663A7C /* InfoPlist.strings */,
 				6A42D429158CA41800663A7C /* main.m */,
@@ -100,6 +110,15 @@
 				6A42D42C158CA41800663A7C /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6A42D442158CC68300663A7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A42D448158CC6EC00663A7C /* DragDropImageView.h */,
+				6A42D449158CC6EC00663A7C /* DragDropImageView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,6 +175,8 @@
 				6A42D428158CA41800663A7C /* InfoPlist.strings in Resources */,
 				6A42D42E158CA41800663A7C /* Credits.rtf in Resources */,
 				6A42D434158CA41800663A7C /* MainMenu.xib in Resources */,
+				6A42D44C158CC73100663A7C /* DropImageHere.tiff in Resources */,
+				6A42D44E158CD73B00663A7C /* pngcrush in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +189,7 @@
 			files = (
 				6A42D42A158CA41800663A7C /* main.m in Sources */,
 				6A42D431158CA41800663A7C /* AppCrushUIAppDelegate.m in Sources */,
+				6A42D44A158CC6EC00663A7C /* DragDropImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +311,7 @@
 				6A42D439158CA41800663A7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,10 +11,34 @@
 @implementation AppCrushUIAppDelegate
 
 @synthesize window = _window;
+@synthesize loadingView = _loadingView;
+@synthesize progressView = _progressView;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
-    // Insert code here to initialize your application
+    [_progressView setHidden:YES];
 }
+
+
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender
+{
+    return YES;
+}
+
+- (void)showLoadingView:(BOOL)flag
+{
+    if (flag) {
+        [_progressView setHidden:NO];
+        [_progressView startAnimation:self];
+    }else {
+        [_progressView setHidden:NO];
+        [_progressView stopAnimation:self];
+    }
+    
+    
+}
+
+
+
 
 @end

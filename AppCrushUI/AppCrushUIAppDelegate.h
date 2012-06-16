@@ -6,10 +6,17 @@
 //  Copyright (c) 2555 __MyCompanyName__. All rights reserved.
 //
 
+#import <AppKit/AppKit.h>
 #import <Cocoa/Cocoa.h>
 
 @interface AppCrushUIAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
+
+@property (weak) IBOutlet NSView *loadingView;
+
+@property (weak) IBOutlet NSProgressIndicator *progressView;
+
+- (void)showLoadingView:(BOOL)flag;
 
 @end
