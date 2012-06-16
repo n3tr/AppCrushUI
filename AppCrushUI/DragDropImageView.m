@@ -7,7 +7,15 @@
 //
 
 #import "DragDropImageView.h"
+#import "AppCrushUIAppDelegate.h"
 
+@interface DragDropImageView()
+{
+    int maxFile;
+    int curFile;
+}
+
+@end
 
 @implementation DragDropImageView
 
@@ -218,6 +226,9 @@ NSString *kPrivateDragUTI = @"com.simpletail.cocoadraganddrop";
 - (void)getImageFromIPA:(NSString *)ipaPath
 {
     
+ 
+    AppCrushUIAppDelegate *appDelegate = (AppCrushUIAppDelegate *)[[NSApplication sharedApplication] delegate];
+    [appDelegate showLoadingView:YES];
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:ipaPath]) {
         NSLog(@"IPA Path not Exists");
@@ -272,8 +283,11 @@ NSString *kPrivateDragUTI = @"com.simpletail.cocoadraganddrop";
         [[NSFileManager defaultManager] createDirectoryAtPath:assetPath withIntermediateDirectories:YES attributes:nil error:nil];
     }
     
-    static int count = 0;
+   
     NSString *pngCrushPath = [[NSBundle mainBundle] pathForResource:@"pngcrush" ofType:nil];
+    
+    maxFile = pngFiles.count;
+    curFile = 0;
     
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
             for (NSString *filename in pngFiles) {
@@ -299,7 +313,11 @@ NSString *kPrivateDragUTI = @"com.simpletail.cocoadraganddrop";
                 [arg removeAllObjects];
                 arg = nil;
                 crushTask = nil;
-                count++;
+                
+                dispatch_async(dispatch_get_current_queue(), ^{
+                    curFile++;
+                    [self finishCrushPNG];
+                });
             }
         });
     
@@ -312,7 +330,9 @@ NSString *kPrivateDragUTI = @"com.simpletail.cocoadraganddrop";
 {
     NSString *appDocDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     NSString *tempFolder = [appDocDir stringByAppendingPathComponent:@"ACUI/unzipped/"];
+    
     NSLog(@"%@",tempFolder);
+    
     if (![[NSFileManager defaultManager] fileExistsAtPath:tempFolder]) {
         [[NSFileManager defaultManager] createDirectoryAtPath:tempFolder withIntermediateDirectories:YES attributes:nil error:nil];
         NSLog(@"Create Temp Folder");
@@ -327,6 +347,14 @@ NSString *kPrivateDragUTI = @"com.simpletail.cocoadraganddrop";
     return tempFolder;
 }
 
+- (void)removeTempDirectory
+{
+    NSString *appDocDir = [NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *tempFolder = [appDocDir stringByAppendingPathComponent:@"ACUI/unzipped/"];
+    [[NSFileManager defaultManager] removeItemAtPath:tempFolder error:nil];
+    NSLog(@"Delete Temp Folder");
+}
+
 - (NSString *)desktopDirectory
 {
     NSString *homeDir = NSHomeDirectory();
@@ -334,7 +362,21 @@ NSString *kPrivateDragUTI = @"com.simpletail.cocoadraganddrop";
     return desktopDir;
 }
 
-
+- (void)finishCrushPNG
+{
+    NSLog(@"%d",curFile);
+    
+    AppCrushUIAppDelegate *appDelegate = (AppCrushUIAppDelegate *)[[NSApplication sharedApplication] delegate];
+    if (curFile == maxFile) {
+        
+        [appDelegate showLoadingView:NO];
+        [self removeTempDirectory];
+    }
+    
+    NSString *progressText = [NSString stringWithFormat:@"%d of %d",curFile,maxFile];
+    
+    [appDelegate.progressLabel setStringValue:progressText];
+}
 
 
 @end

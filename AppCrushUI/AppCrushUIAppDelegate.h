@@ -16,6 +16,7 @@
 @property (weak) IBOutlet NSView *loadingView;
 
 @property (weak) IBOutlet NSProgressIndicator *progressView;
+@property (weak) IBOutlet NSTextField *progressLabel;
 
 - (void)showLoadingView:(BOOL)flag;
 

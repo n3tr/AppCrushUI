@@ -13,10 +13,12 @@
 @synthesize window = _window;
 @synthesize loadingView = _loadingView;
 @synthesize progressView = _progressView;
+@synthesize progressLabel = _progressLabel;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     [_progressView setHidden:YES];
+    [_loadingView setHidden:YES];
 }
 
 
@@ -28,14 +30,14 @@
 - (void)showLoadingView:(BOOL)flag
 {
     if (flag) {
+        [_loadingView setHidden:NO];
         [_progressView setHidden:NO];
         [_progressView startAnimation:self];
     }else {
+        [_loadingView setHidden:YES];
         [_progressView setHidden:NO];
         [_progressView stopAnimation:self];
     }
-    
-    
 }
 
 

@@ -16,6 +16,9 @@
 		6A42D44A158CC6EC00663A7C /* DragDropImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A42D449158CC6EC00663A7C /* DragDropImageView.m */; };
 		6A42D44C158CC73100663A7C /* DropImageHere.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 6A42D44B158CC73100663A7C /* DropImageHere.tiff */; };
 		6A42D44E158CD73B00663A7C /* pngcrush in Resources */ = {isa = PBXBuildFile; fileRef = 6A42D44D158CD73B00663A7C /* pngcrush */; };
+		6AC72B6D158D2AAB00A7843D /* mainbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AC72B6B158D2AAB00A7843D /* mainbg.png */; };
+		6AC72B6E158D2AAB00A7843D /* overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AC72B6C158D2AAB00A7843D /* overlay.png */; };
+		6AC72B75158D357500A7843D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AC72B74158D357500A7843D /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		6A42D449158CC6EC00663A7C /* DragDropImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragDropImageView.m; sourceTree = "<group>"; };
 		6A42D44B158CC73100663A7C /* DropImageHere.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = DropImageHere.tiff; sourceTree = "<group>"; };
 		6A42D44D158CD73B00663A7C /* pngcrush */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = pngcrush; sourceTree = "<group>"; };
+		6AC72B6B158D2AAB00A7843D /* mainbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainbg.png; sourceTree = "<group>"; };
+		6AC72B6C158D2AAB00A7843D /* overlay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = overlay.png; sourceTree = "<group>"; };
+		6AC72B74158D357500A7843D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 		6A42D40E158CA41700663A7C = {
 			isa = PBXGroup;
 			children = (
+				6AC72B74158D357500A7843D /* icon.png */,
 				6A42D423158CA41800663A7C /* AppCrushUI */,
 				6A42D41C158CA41800663A7C /* Frameworks */,
 				6A42D41A158CA41800663A7C /* Products */,
@@ -89,6 +96,8 @@
 		6A42D423158CA41800663A7C /* AppCrushUI */ = {
 			isa = PBXGroup;
 			children = (
+				6AC72B6B158D2AAB00A7843D /* mainbg.png */,
+				6AC72B6C158D2AAB00A7843D /* overlay.png */,
 				6A42D442158CC68300663A7C /* View */,
 				6A42D42F158CA41800663A7C /* AppCrushUIAppDelegate.h */,
 				6A42D430158CA41800663A7C /* AppCrushUIAppDelegate.m */,
@@ -177,6 +186,9 @@
 				6A42D434158CA41800663A7C /* MainMenu.xib in Resources */,
 				6A42D44C158CC73100663A7C /* DropImageHere.tiff in Resources */,
 				6A42D44E158CD73B00663A7C /* pngcrush in Resources */,
+				6AC72B6D158D2AAB00A7843D /* mainbg.png in Resources */,
+				6AC72B6E158D2AAB00A7843D /* overlay.png in Resources */,
+				6AC72B75158D357500A7843D /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +288,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCrushUI/AppCrushUI-Prefix.pch";
 				INFOPLIST_FILE = "AppCrushUI/AppCrushUI-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,6 +300,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AppCrushUI/AppCrushUI-Prefix.pch";
 				INFOPLIST_FILE = "AppCrushUI/AppCrushUI-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
